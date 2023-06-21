@@ -1,0 +1,15 @@
+let arr=[
+    1,
+    undefined,
+    true,
+    null,
+    "123",
+    "4",
+    [6.23,5,8,0],
+    (num1)=>num1*5,
+    {a:1,b:2,c:3,say_hello:() =>"hello"}
+];
+console.log(arr[6][1]);
+for(key in arr[8]){
+    console.log(key,arr[8][key]);
+}
