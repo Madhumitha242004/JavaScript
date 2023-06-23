@@ -1,0 +1,41 @@
+export const USER_DATA = [
+    {
+        id: 1,
+        name: 'gopu',
+        age: 23,
+        email: 'do@do.com'
+    }
+];
+
+export const addUser=(new_user)=>{
+    USER_DATA.push(new_user);
+
+}
+export const editUser=(id=1,key='name',value='xyz')=>{
+    const user_index=USER_DATA.findIndex((user)=>user.id===id);
+    if(user_index!=-1){
+        USER_DATA[user_index][key]=value;
+    }
+
+
+}
+export const editMultipleParamInUser=(id=1,updateValue={
+    name: 'raja',
+    age: 24
+})=>{
+    const user_index=USER_DATA.findIndex((user)=>user.id===id);
+    if(user_index != -1){
+        USER_DATA[user_index]={
+            ...USER_DATA[user_index],
+            ...updateValue
+        }
+    }
+}
+export const deleteUser=(id)=>{
+    const user_index=USER_DATA.findIndex((user)=>user.id===id);
+    if(user_index != -1){
+        USER_DATA.splice(user_index,1);
+    }
+
+}
+console.log(USER_DATA);
